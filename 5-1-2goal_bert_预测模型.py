@@ -84,6 +84,6 @@ pred_labels = mlb.inverse_transform(preds)
 
 # 保存预测结果到Excel文件
 test_data['政策目标'] = [','.join(labels) for labels in pred_labels]
-output_path = 'D:\\File_zyj\\2.论文文件\\4.小论文_政策知识图谱\\数据分析文件0929\\政策目标-预测结果-bert.xlsx'
+output_path = 'D:\\政策目标-预测结果-bert.xlsx'
 test_data.to_excel(output_path, index=False)
 print(f"政策目标预测结果已保存到 {output_path}")
