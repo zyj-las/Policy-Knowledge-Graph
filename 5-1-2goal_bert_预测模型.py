@@ -59,7 +59,7 @@ mlb = checkpoint['mlb']
 tokenizer = BertTokenizer.from_pretrained('bert-base-chinese')
 
 # 读取测试数据
-test_data = pd.read_csv('D:\\File_zyj\\2.论文文件\\4.小论文_政策知识图谱\\数据分析文件0929\\政策段落.csv')
+test_data = pd.read_csv('D:\\政策段落.csv')
 test_texts = test_data['政策段落'].tolist()
 
 # 创建测试数据集和DataLoader
