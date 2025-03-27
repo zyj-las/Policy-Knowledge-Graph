@@ -218,12 +218,12 @@ plt.ylabel('Accuracy')
 plt.legend()
 
 # 保存图像
-plt.savefig('D:\\Experiment_zyj\\Python_exp\\policy_map\\goal_bert_曲线图2.png')
+plt.savefig('D:\\goal_bert_曲线图.png')
 #plt.show()
 print(f"曲线图已保存")
 
 # 保存模型权重
-model_save_path = 'D:\\Experiment_zyj\\Python_exp\\policy_map\\goal_bert_model2.pth'
+model_save_path = 'D:\\goal_bert_model.pth'
 
 # 保存模型、优化器、调度器和标签处理器
 torch.save({
