@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 from torch.optim.lr_scheduler import ReduceLROnPlateau # 增加学习率调度器
 import nlpaug.augmenter.word as naw
 # 读取Excel数据
-train_data = pd.read_excel('D:\\File_zyj\\2.论文文件\\4.小论文_政策知识图谱\\数据分析文件0929\\政策措施-训练.xlsx')
+train_data = pd.read_excel('D:\\政策措施-训练.xlsx')
 
 train_texts = train_data['政策段落'].tolist()
 train_labels = train_data['政策措施'].apply(lambda x: x.split(',')).tolist()
@@ -100,7 +100,7 @@ scheduler = ReduceLROnPlateau(optimizer, mode='max', patience=2, factor=0.2, thr
 loss_fn = torch.nn.BCEWithLogitsLoss()  # 可以根据类别权重调整此损失函数
 
 # 记录文件路径
-log_file_path = 'D:\\Experiment_zyj\\Python_exp\\policy_map\\measure_bert_迭代过程.txt'
+log_file_path = 'D:\\measure_bert_迭代过程.txt'
 log_file = open(log_file_path, 'w')
 
 # 保存结果并绘制曲线的变量
@@ -215,12 +215,12 @@ plt.ylabel('Accuracy')
 plt.legend()
 
 # 保存图像
-plt.savefig('D:\\Experiment_zyj\\Python_exp\\policy_map\\measure_bert_曲线图.png')
+plt.savefig('D:\\measure_bert_曲线图.png')
 #plt.show()
 print(f"曲线图已保存")
 
 # 保存模型权重
-model_save_path = 'D:\\Experiment_zyj\\Python_exp\\policy_map\\measure_bert_model.pth'
+model_save_path = 'D:\\measure_bert_model.pth'
 
 # 保存模型、优化器、调度器和标签处理器
 torch.save({
