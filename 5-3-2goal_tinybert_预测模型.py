@@ -42,7 +42,7 @@ class BertForMultiLabelClassification(torch.nn.Module):
         return logits
 
 # 加载保存的模型和MultiLabelBinarizer
-model_save_path = 'D:\\Experiment_zyj\\Python_exp\\policy_map\\goal_tinybert_model.pth'
+model_save_path = 'D:\\goal_tinybert_model.pth'
 checkpoint = torch.load(model_save_path)
 
 # 初始化模型
@@ -59,7 +59,7 @@ mlb = checkpoint['mlb']
 tokenizer = BertTokenizer.from_pretrained('huawei-noah/TinyBERT_General_4L_312D')
 
 # 读取测试数据
-test_data = pd.read_csv('D:\\File_zyj\\2.论文文件\\4.小论文_政策知识图谱\\数据分析文件0929\\政策段落.csv')
+test_data = pd.read_csv('D:\\政策段落.csv')
 test_texts = test_data['政策段落'].tolist()
 
 # 创建测试数据集和DataLoader
@@ -84,6 +84,6 @@ pred_labels = mlb.inverse_transform(preds)
 
 # 保存预测结果到Excel文件
 test_data['政策目标'] = [','.join(labels) for labels in pred_labels]
-output_path = 'D:\\File_zyj\\2.论文文件\\4.小论文_政策知识图谱\\数据分析文件0929\\政策目标-预测结果-tiny.xlsx'
+output_path = 'D:\\政策目标-预测结果-tiny.xlsx'
 test_data.to_excel(output_path, index=False)
 print(f"政策目标预测结果已保存到 {output_path}")
