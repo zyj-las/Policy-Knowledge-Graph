@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 from torch.optim.lr_scheduler import ReduceLROnPlateau # 增加学习率调度器
 import nlpaug.augmenter.word as naw
 # 读取Excel数据
-train_data = pd.read_excel('D:\\File_zyj\\2.论文文件\\4.小论文_政策知识图谱\\数据分析文件0929\\政策目标-训练.xlsx')
+train_data = pd.read_excel('D:\\政策目标-训练.xlsx')
 
 train_texts = train_data['政策段落'].tolist()
 train_labels = train_data['政策目标'].apply(lambda x: x.split(',')).tolist()
@@ -237,12 +237,12 @@ plt.ylabel('Accuracy')
 plt.legend()
 
 # 保存图像
-plt.savefig('D:\\Experiment_zyj\\Python_exp\\policy_map\\goal_distilbert_曲线图2.png')
+plt.savefig('D:\\goal_distilbert_曲线图.png')
 #plt.show()
 print(f"曲线图已保存")
 
 # 保存最终模型权重
-model_save_path = 'D:\\Experiment_zyj\\Python_exp\\policy_map\\goal_distilbert_model2.pth'
+model_save_path = 'D:\\goal_distilbert_model.pth'
 
 # 保存模型、优化器、调度器和标签处理器
 torch.save({
