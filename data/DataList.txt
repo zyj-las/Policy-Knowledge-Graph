@@ -1,0 +1,20 @@
+过程数据文件列表，有需要可联系提供
+———————
+1.基于网络检索与索引匹配的政策要素内容抽取
+policy base.xlsx
+policy.csv
+org.csv
+relesae.csv
+2~3.基于全文解析的政策要素内容抽取
+paragraph.csv
+cite.csv
+cite base.csv
+4.基于实体识别的政策要素内容抽取
+act.xlsx
+5.基于文本分类的政策要素内容抽取
+train dic.csv
+paragraph base.xlsx
+PBert actbe.xlsx
+PBert goal.xlsx
+PBert instrument.xlsx
+PBert measure.xlsx
